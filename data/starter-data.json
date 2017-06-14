@@ -2,535 +2,64 @@
 	"stylists": {
 		"stylist1" : {
 			"name": "Jackie",
-			"slots": {
-				"0900": {
-					"booked": false,
-					"time": "9:00am"
-				},
-				"0915": {
-					"booked": false,
-					"time": "9:15am"
-				},
-				"0930": {
-					"booked": false,
-					"time": "9:30am"
-				},
-				"0945": {
-					"booked": false,
-					"time": "9:45am"
-				},
-				"1000": {
-					"booked": false,
-					"time": "10:00am"
-				},
-				"1015": {
-					"booked": false,
-					"time": "10:15am"
-				},
-				"1045": {
-					"booked": false,
-					"time": "10:45am"
-				},
-				"1100": {
-					"booked": false,
-					"time": "11:00am"
-				},
-				"1115": {
-					"booked": false,
-					"time": "11:15am"
-				},
-				"1130": {
-					"booked": false,
-					"time": "11:30am"
-				},
-				"1145": {
-					"booked": false,
-					"time": "11:45am"
-				},
-				"1200": {
-					"booked": false,
-					"time": "12:00pm"
-				},
-				"1215": {
-					"booked": false,
-					"time": "12:15pm"
-				},
-				"1230": {
-					"booked": false,
-					"time": "12:30pm"
-				},
-				"1245": {
-					"booked": false,
-					"time": "12:45pm"
-				},
-				"1300": {
-					"booked": false,
-					"time": "1:00pm"
-				},
-				"1315": {
-					"booked": false,
-					"time": "1:15pm"
-				},
-				"1330": {
-					"booked": false,
-					"time": "1:30pm"
-				},
-				"1345": {
-					"booked": false,
-					"time": "1:45pm"
-				},
-				"1400": {
-					"booked": false,
-					"time": "2:00pm"
-				},
-				"1415": {
-					"booked": false,
-					"time": "2:15pm"
-				},
-				"1430": {
-					"booked": false,
-					"time": "2:30pm"
-				},
-				"1445": {
-					"booked": false,
-					"time": "2:45pm"
-				},
-				"1500": {
-					"booked": false,
-					"time": "3:00pm"
-				},
-				"1515": {
-					"booked": false,
-					"time": "3:15pm"
-				},
-				"1530": {
-					"booked": false,
-					"time": "3:30pm"
-				},
-				"1545": {
-					"booked": false,
-					"time": "3:45pm"
-				},
-				"1600": {
-					"booked": false,
-					"time": "4:00pm"
-				},
-				"1615": {
-					"booked": false,
-					"time": "4:15pm"
-				},
-				"1630": {
-					"booked": false,
-					"time": "4:30pm"
-				},
-				"1645": {
-					"booked": false,
-					"time": "4:45pm"
-				},
-				"1700": {
-					"booked": false,
-					"time": "5:00pm"
-				}
-			}
+			"stylistID": 0
 		},
 		"stylist2": {
 			"name": "Jessi",
-			"slots": {
-				"0900": {
-					"booked": false,
-					"time": "9:00am"
-				},
-				"0915": {
-					"booked": false,
-					"time": "9:15am"
-				},
-				"0930": {
-					"booked": false,
-					"time": "9:30am"
-				},
-				"0945": {
-					"booked": false,
-					"time": "9:45am"
-				},
-				"1000": {
-					"booked": false,
-					"time": "10:00am"
-				},
-				"1015": {
-					"booked": false,
-					"time": "10:15am"
-				},
-				"1045": {
-					"booked": false,
-					"time": "10:45am"
-				},
-				"1100": {
-					"booked": false,
-					"time": "11:00am"
-				},
-				"1115": {
-					"booked": false,
-					"time": "11:15am"
-				},
-				"1130": {
-					"booked": false,
-					"time": "11:30am"
-				},
-				"1145": {
-					"booked": false,
-					"time": "11:45am"
-				},
-				"1200": {
-					"booked": false,
-					"time": "12:00pm"
-				},
-				"1215": {
-					"booked": false,
-					"time": "12:15pm"
-				},
-				"1230": {
-					"booked": false,
-					"time": "12:30pm"
-				},
-				"1245": {
-					"booked": false,
-					"time": "12:45pm"
-				},
-				"1300": {
-					"booked": false,
-					"time": "1:00pm"
-				},
-				"1315": {
-					"booked": false,
-					"time": "1:15pm"
-				},
-				"1330": {
-					"booked": false,
-					"time": "1:30pm"
-				},
-				"1345": {
-					"booked": false,
-					"time": "1:45pm"
-				},
-				"1400": {
-					"booked": false,
-					"time": "2:00pm"
-				},
-				"1415": {
-					"booked": false,
-					"time": "2:15pm"
-				},
-				"1430": {
-					"booked": false,
-					"time": "2:30pm"
-				},
-				"1445": {
-					"booked": false,
-					"time": "2:45pm"
-				},
-				"1500": {
-					"booked": false,
-					"time": "3:00pm"
-				},
-				"1515": {
-					"booked": false,
-					"time": "3:15pm"
-				},
-				"1530": {
-					"booked": false,
-					"time": "3:30pm"
-				},
-				"1545": {
-					"booked": false,
-					"time": "3:45pm"
-				},
-				"1600": {
-					"booked": false,
-					"time": "4:00pm"
-				},
-				"1615": {
-					"booked": false,
-					"time": "4:15pm"
-				},
-				"1630": {
-					"booked": false,
-					"time": "4:30pm"
-				},
-				"1645": {
-					"booked": false,
-					"time": "4:45pm"
-				},
-				"1700": {
-					"booked": false,
-					"time": "5:00pm"
-				}
-			}
+			"stylistID": 1
 		},
 		"stylist3": {
 			"name": "Jamie",
-			"slots": {
-				"0900": {
-					"booked": false,
-					"time": "9:00am"
-				},
-				"0915": {
-					"booked": false,
-					"time": "9:15am"
-				},
-				"0930": {
-					"booked": false,
-					"time": "9:30am"
-				},
-				"0945": {
-					"booked": false,
-					"time": "9:45am"
-				},
-				"1000": {
-					"booked": false,
-					"time": "10:00am"
-				},
-				"1015": {
-					"booked": false,
-					"time": "10:15am"
-				},
-				"1045": {
-					"booked": false,
-					"time": "10:45am"
-				},
-				"1100": {
-					"booked": false,
-					"time": "11:00am"
-				},
-				"1115": {
-					"booked": false,
-					"time": "11:15am"
-				},
-				"1130": {
-					"booked": false,
-					"time": "11:30am"
-				},
-				"1145": {
-					"booked": false,
-					"time": "11:45am"
-				},
-				"1200": {
-					"booked": false,
-					"time": "12:00pm"
-				},
-				"1215": {
-					"booked": false,
-					"time": "12:15pm"
-				},
-				"1230": {
-					"booked": false,
-					"time": "12:30pm"
-				},
-				"1245": {
-					"booked": false,
-					"time": "12:45pm"
-				},
-				"1300": {
-					"booked": false,
-					"time": "1:00pm"
-				},
-				"1315": {
-					"booked": false,
-					"time": "1:15pm"
-				},
-				"1330": {
-					"booked": false,
-					"time": "1:30pm"
-				},
-				"1345": {
-					"booked": false,
-					"time": "1:45pm"
-				},
-				"1400": {
-					"booked": false,
-					"time": "2:00pm"
-				},
-				"1415": {
-					"booked": false,
-					"time": "2:15pm"
-				},
-				"1430": {
-					"booked": false,
-					"time": "2:30pm"
-				},
-				"1445": {
-					"booked": false,
-					"time": "2:45pm"
-				},
-				"1500": {
-					"booked": false,
-					"time": "3:00pm"
-				},
-				"1515": {
-					"booked": false,
-					"time": "3:15pm"
-				},
-				"1530": {
-					"booked": false,
-					"time": "3:30pm"
-				},
-				"1545": {
-					"booked": false,
-					"time": "3:45pm"
-				},
-				"1600": {
-					"booked": false,
-					"time": "4:00pm"
-				},
-				"1615": {
-					"booked": false,
-					"time": "4:15pm"
-				},
-				"1630": {
-					"booked": false,
-					"time": "4:30pm"
-				},
-				"1645": {
-					"booked": false,
-					"time": "4:45pm"
-				},
-				"1700": {
-					"booked": false,
-					"time": "5:00pm"
-				}
-			}
+			"stylistID": 2
 		},
 		"stylist4": {
 			"name": "Joey",
-			"slots": {
-				"0900": {
-					"booked": false,
-					"time": "9:00am"
-				},
-				"0915": {
-					"booked": false,
-					"time": "9:15am"
-				},
-				"0930": {
-					"booked": false,
-					"time": "9:30am"
-				},
-				"0945": {
-					"booked": false,
-					"time": "9:45am"
-				},
-				"1000": {
-					"booked": false,
-					"time": "10:00am"
-				},
-				"1015": {
-					"booked": false,
-					"time": "10:15am"
-				},
-				"1045": {
-					"booked": false,
-					"time": "10:45am"
-				},
-				"1100": {
-					"booked": false,
-					"time": "11:00am"
-				},
-				"1115": {
-					"booked": false,
-					"time": "11:15am"
-				},
-				"1130": {
-					"booked": false,
-					"time": "11:30am"
-				},
-				"1145": {
-					"booked": false,
-					"time": "11:45am"
-				},
-				"1200": {
-					"booked": false,
-					"time": "12:00pm"
-				},
-				"1215": {
-					"booked": false,
-					"time": "12:15pm"
-				},
-				"1230": {
-					"booked": false,
-					"time": "12:30pm"
-				},
-				"1245": {
-					"booked": false,
-					"time": "12:45pm"
-				},
-				"1300": {
-					"booked": false,
-					"time": "1:00pm"
-				},
-				"1315": {
-					"booked": false,
-					"time": "1:15pm"
-				},
-				"1330": {
-					"booked": false,
-					"time": "1:30pm"
-				},
-				"1345": {
-					"booked": false,
-					"time": "1:45pm"
-				},
-				"1400": {
-					"booked": false,
-					"time": "2:00pm"
-				},
-				"1415": {
-					"booked": false,
-					"time": "2:15pm"
-				},
-				"1430": {
-					"booked": false,
-					"time": "2:30pm"
-				},
-				"1445": {
-					"booked": false,
-					"time": "2:45pm"
-				},
-				"1500": {
-					"booked": false,
-					"time": "3:00pm"
-				},
-				"1515": {
-					"booked": false,
-					"time": "3:15pm"
-				},
-				"1530": {
-					"booked": false,
-					"time": "3:30pm"
-				},
-				"1545": {
-					"booked": false,
-					"time": "3:45pm"
-				},
-				"1600": {
-					"booked": false,
-					"time": "4:00pm"
-				},
-				"1615": {
-					"booked": false,
-					"time": "4:15pm"
-				},
-				"1630": {
-					"booked": false,
-					"time": "4:30pm"
-				},
-				"1645": {
-					"booked": false,
-					"time": "4:45pm"
-				},
-				"1700": {
-					"booked": false,
-					"time": "5:00pm"
-				}
-			}
+			"stylistID": 3
 		}
+	},
+	"services": {
+		"menscut": {
+			"serviceID": 0,
+			"time": 30
+		},
+		"womenscut": {
+			"serviceID": 1,
+			"time": 45
+		},
+		"kidscut": {
+			"serviceID": 2,
+			"time": 30
+		},
+		"bangtrim": {
+			"serviceID": 3,
+			"time": 15
+		},
+		"beardtrim": {
+			"serviceID": 4,
+			"time": 15
+		},
+		"browwax": {
+			"serviceID": 5,
+			"time": 15
+		},
+		"shampoo": {
+			"serviceID": 6,
+			"time": 15
+		},
+		"shamblow": {
+			"serviceID": 7,
+			"time": 30
+		},
+		"condition": {
+			"serviceID": 8,
+			"time": 15
+		}
+	},
+	"appointments": {
+		"start-time": "",
+		"end-time": "",
+		"stylistID": "",
+		"uid": "",
+		"serviceID": ""
 	}
 }

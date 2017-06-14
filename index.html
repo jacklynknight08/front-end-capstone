@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Salon/Barbershop App</title>
+	<title>Schedule App</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="./lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="./sass/main.scss">
+  	<link rel="stylesheet" type="text/css" href="css/main.css"> -->
 </head>
-<body ng-app="SalonApp">
+<body ng-app="ScheduleApp">
+
+	<div ng-include="'partials/navbar.html'"></div>
+	<!-- <div ng-include="'partials/schedule.html'"></div> -->
+
+	<div ng-view></div>
+
+
+
+
+
 
 	<script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="./lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -12,5 +25,19 @@
 	<script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
 	<script type="text/javascript" src="./lib/node_modules/firebase/firebase.js"></script>
 
+	<script type="text/javascript" src="./app/app.js"></script>
+	<script type="text/javascript" src="./values/FBCreds.js"></script>
+
+	<!-- Factories -->
+	<script type="text/javascript" src="./app/factories/DataFactory.js"></script>
+	<script type="text/javascript" src="./app/factories/AuthFactory.js"></script>
+	<!-- <script type="text/javascript" src="./app/factories/FilterFactory.js"></script>
+ -->
+	<!-- Controllers -->
+	<!-- <script type="text/javascript" src="./app/controllers/NavCtrl.js"></script> -->
+	<script type="text/javascript" src="./app/controllers/AuthCtrl.js"></script>
+<!-- 	<script type="text/javascript" src="./app/controllers/SelectCtrl.js"></script>
+	<script type="text/javascript" src="./app/controllers/ScheduleCtrl.js"></script>
+ -->
 </body>
 </html>
