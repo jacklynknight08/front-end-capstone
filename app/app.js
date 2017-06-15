@@ -2,20 +2,19 @@
 
 const app = angular.module('ScheduleApp', ['ngRoute']);
 
-
 //set isAuth up so user has to be logged in to view other pages
-// let isAuth = (AuthFactory) => new Promise((resolve, reject) => {  //look inside AuthFactory
-// 	AuthFactory.isAuthenticated()
-// 	.then( (userExists) => {  //should be a true/false that comes back to us
-// 		if(userExists){
-// 			console.log("Authenticated, go ahead");
-// 			resolve();
-// 		}else {
-// 			console.log("Authentication reject, GO AWAY");
-// 			reject();
-// 		}
-// 	});
-// });
+let isAuth = (AuthFactory) => new Promise((resolve, reject) => {  //look inside AuthFactory
+	AuthFactory.isAuthenticated()
+	.then( (userExists) => {  //should be a true/false that comes back to us
+		if(userExists){
+			console.log("Authenticated, go ahead");
+			resolve();
+		}else {
+			console.log("Authentication reject, GO AWAY");
+			reject();
+		}
+	});
+});
 
 app.config( ($routeProvider) => {
 	$routeProvider  //setting up our object
@@ -30,6 +29,27 @@ app.config( ($routeProvider) => {
 	.when('/logout', {
 		templateUrl: 'partials/auth.html',
 		controller: 'AuthCtrl',
+	})
+	.when('/home', {
+		templateUrl: 'partials/home.html',
+		resolve: {isAuth}
+	})
+	.when('/staff', {
+		templateUrl: 'partials/staff.html',
+		resolve: {isAuth}
+	})
+	.when('/products', {
+		templateUrl: 'partials/products.html',
+		resolve: {isAuth}
+	})
+	.when('/contact', {
+		templateUrl: 'partials/contact.html',
+		resolve: {isAuth}
+	})
+	.when('/schedule', {
+		templateUrl: 'partials/schedule.html',
+		//controller: 'ScheduleCtrl',
+		resolve: {isAuth}
 	})
 	.otherwise('/');
 });

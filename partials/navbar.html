@@ -4,11 +4,12 @@
       <a class="navbar-brand" href="#">Logo</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Staff</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Schedule</a></li>
+      <li><a ng-href="#!/home">Home</a></li>
+      <li><a ng-href="#!/staff">Staff</a></li>
+      <li><a ng-href="#!/products">Products</a></li>
+      <li><a ng-href="#!/contact">Contact</a></li>
+      <li><a ng-href="#!/schedule">Schedule</a></li>
+      <li><a ng-click="logout()" ng-show="isLoggedIn" class="btn btn-info">Logout</a></button>
     </ul>
   </div>
 </nav>

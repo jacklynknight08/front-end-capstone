@@ -19,38 +19,47 @@
 	},
 	"services": {
 		"menscut": {
+			"name": "Men's Cut",
 			"serviceID": 0,
 			"time": 30
 		},
 		"womenscut": {
+			"name": "Women's Cut",
 			"serviceID": 1,
 			"time": 45
 		},
 		"kidscut": {
+			"name": "Kid's Cut",
 			"serviceID": 2,
 			"time": 30
 		},
 		"bangtrim": {
+			"name": "Bang Trim",
 			"serviceID": 3,
 			"time": 15
 		},
 		"beardtrim": {
+			"name": "Beard Trim",
 			"serviceID": 4,
 			"time": 15
 		},
 		"browwax": {
+			"name": "Brow Wax",
 			"serviceID": 5,
 			"time": 15
 		},
 		"shampoo": {
+			"name": "Shampoo",
 			"serviceID": 6,
 			"time": 15
 		},
 		"shamblow": {
+			"name": "Shampoo/Blowdry Style",
 			"serviceID": 7,
 			"time": 30
 		},
 		"condition": {
+			"name": "Conditioning Treament",
 			"serviceID": 8,
 			"time": 15
 		}
