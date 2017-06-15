@@ -2,40 +2,19 @@
 
 app.factory("AuthFactory", function(){
 
-    //currentUser, createUser, loginUser, logoutUser, isAuthenticated getUser
-
     let currentUser = null;
 
-    let createUser = function(userObj){
-        return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
-        .catch( function(error){
-            let errorCode = error.code;
-            let errorMessage = error.message;
-            console.log("error:", errorCode, errorMessage);
-        });
-    };
-
-    let loginUser = function(userObj) {
-        return firebase.auth().signInWithEmailAndPassword(userObj.email, userObj.password)
-        .catch( function(error){
-            let errorCode = error.code;
-            let errorMessage = error.message;
-            console.log("error:", errorCode, errorMessage);
-        });
-    };
-
-
     let logoutUser = function(){
-        console.log("logoutUser");
+        console.log("logoutUser() fired");
         return firebase.auth().signOut();
     };
-
 
     let isAuthenticated = function (){
         console.log("AuthFactory: isAuthenticated");
         return new Promise ( (resolve, reject) => {
             firebase.auth().onAuthStateChanged( (user) => {
                 if (user){
+                    console.log('isAuthenticated user', user);
                     currentUser = user.uid;
                     console.log("user", user.uid);
                     resolve(true);
@@ -47,6 +26,7 @@ app.factory("AuthFactory", function(){
     };
 
     let getUser = function(){
+        console.log("currUSER", currentUser);
         return currentUser;
     };
 
@@ -57,7 +37,6 @@ app.factory("AuthFactory", function(){
     };
 
 
-    return {createUser, loginUser, logoutUser, isAuthenticated, getUser, authWithProvider};
-
+    return {logoutUser, isAuthenticated, getUser, authWithProvider};
 
 });
