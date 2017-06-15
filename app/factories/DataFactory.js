@@ -6,38 +6,95 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 
 	console.log("What's going on here?");
 
-			// const getServices = () => {
-			// 	let services = [];
-			// 	return $q( (resolve, reject) => {
-			// 		$http.get(`${FBCreds.databaseURL}/services.json`)
-			// 		.then( (serviceObj) => {
-			// 			let serviceCollection = serviceObj.data;
-			// 			console.log("service collection", serviceCollection);
-			// 			Object.keys(serviceCollection).forEach( (key) => {
-			// 				serviceCollection[key].serviceID = key;
-			// 				services.push(serviceCollection[key]);
-			// 			});
-			// 			resolve(services);
-			// 		})
-			// 		.catch( (error) => {
-			// 			reject(error);
-			// 		});
-			// 	});
-			// };
+			const addAppointment = (newObj) => {
+				return $q ((resolve, reject) => {
+					let object = JSON.stringify(newObj);
+					$http.post(`${FBCreds.databaseURL}/appointments.json`, object)
+					.then ((serviceID, stylistID, startTime) => {
+						resolve(serviceID, stylistID, startTime);
+					})
+					.catch ((error) => {
+						reject(error);
+					});
+				});
+			};
 
-			//const getStylists
+			const getServices = () => {
+				console.log("Services?");
+				let services = [];
+				return $q((resolve, reject) => {
+					$http.get(`${FBCreds.databaseURL}/services.json`)
+					.then((servObj) => {
+						let servCollection = servObj.data;
+						console.log("service collection", servCollection);
+						Object.keys(servCollection).forEach((key) => {
+							servCollection[key].serviceID = key;
+							services.push(servCollection[key]);
+						});
+						resolve(services);
+					})
+					.catch((error) => {
+						reject(error);
+					});
+				});
+			};
 
-			//const getAppointments
+				const getStylists = () => {
+				console.log("Stylists?");
+				let stylists = [];
+				return $q((resolve, reject) => {
+					$http.get(`${FBCreds.databaseURL}/stylists.json`)
+					.then((styleObj) => {
+						let styleCollection = styleObj.data;
+						console.log("stylist collection", styleCollection);
+						Object.keys(styleCollection).forEach((key) => {
+							styleCollection[key].stylistID = key;
+							stylists.push(styleCollection[key]);
+						});
+						resolve(stylists);
+					})
+					.catch((error) => {
+						reject(error);
+					});
+				});
+			};
 
-			// const createAppt
 
-			//const deleteAppt
+			const getAppointments = (user) => {
+				let appts = [];
+				return $q((resolve, reject) => {
+					$http.get(`${FBCreds.databaseURL}/appointments.json?orderBy="uid"&equalTo="${user}"`)
+					.then((apptObj) => {
+						let apptCollection = apptObj.data;
+						console.log("apptCollection", apptCollection);
+						Object.keys(apptCollection).forEach((key) => {
+							apptCollection[key].id = key;
+							appts.push(apptCollection[key]);
+						});
+						resolve(appts);
+					})
+					.catch((error) => {
+						reject(error);
+					});
+				});
+			};
 
-	return {
-		//getServices,
-		//getStylists,
-		//getAppointments,
-		//createAppt,
-		//deleteAppt
-	};
+			const deleteAppointment = (appointmentID) => {
+				return $q ((resolve, reject) => {
+					$http.delete(`${FBCreds.databaseURL}/appointments/${appointmentID}.json`)
+					.then((response) => {
+						resolve(response);
+					})
+					.catch((error) => {
+						reject(error);
+					});
+				});
+			};
+
+	return { addAppointment,
+			 getAppointments,
+			 getServices,
+			 getStylists,
+			 deleteAppointment };
 });
+
