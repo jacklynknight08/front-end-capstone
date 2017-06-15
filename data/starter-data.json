@@ -65,8 +65,8 @@
 		}
 	},
 	"appointments": {
-		"start-time": "",
-		"end-time": "",
+		"startTime": "",
+		"endTime": "",
 		"stylistID": "",
 		"uid": "",
 		"serviceID": ""

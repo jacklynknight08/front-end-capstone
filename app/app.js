@@ -51,6 +51,21 @@ app.config( ($routeProvider) => {
 		//controller: 'ScheduleCtrl',
 		resolve: {isAuth}
 	})
+	.when('/create', {
+		templateUrl: 'partials/create-appt.html',
+		controller: 'CreateApptCtrl',
+		resolve: {isAuth}
+	})
+	.when('/confirm', {
+		templateUrl: 'partials/confirm.html',
+		//controller: 'ConfirmCtrl',
+		resolve: {isAuth}
+	})
+	.when('/viewschedule', {
+		templateUrl: 'partials/view-schedule.html',
+		//controller: 'ViewScheduleCtrl',
+		resolve: {isAuth}
+	})
 	.otherwise('/');
 });
 
