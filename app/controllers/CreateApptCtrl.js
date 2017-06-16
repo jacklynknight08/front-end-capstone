@@ -19,6 +19,10 @@ app.controller("CreateApptCtrl", function($scope, DataFactory, $location, AuthFa
 		//console.log("Stylist", $scope.newAppt.stylistID);
 		DataFactory.addAppointment($scope.newAppt)
 		.then( (data) => {
+			DataFactory.getBookedAppt(data)
+			.then( (data) => {
+				console.log("BOOKED DATA", data);
+			});
 			$location.path(`/confirm`);
 		});
 	};

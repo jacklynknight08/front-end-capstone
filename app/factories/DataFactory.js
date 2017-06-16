@@ -10,8 +10,9 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 				return $q ((resolve, reject) => {
 					let object = JSON.stringify(newObj);
 					$http.post(`${FBCreds.databaseURL}/appointments.json`, object)
-					.then ((serviceID, stylistID, startTime) => {
-						resolve(serviceID, stylistID, startTime);
+					.then ((response) => {
+						console.log("Response", response.data.name);
+						resolve(response.data.name);
 					})
 					.catch ((error) => {
 						reject(error);
@@ -91,11 +92,11 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 				});
 			};
 
-			const getBookedAppt = (uid) => {
+			const getBookedAppt = (apptkey) => {
 				return $q((resolve, reject) => {
-					$http.get(`${FBCreds.databaseURL}/appointments/${uid}.json`)
+					$http.get(`${FBCreds.databaseURL}/appointments/${apptkey}.json`)
 					.then((obj) => {
-						resolve(obj);
+						resolve(obj.data);
 					})
 					.catch((error) => {
 						reject(error);
