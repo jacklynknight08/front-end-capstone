@@ -96,7 +96,9 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 				return $q((resolve, reject) => {
 					$http.get(`${FBCreds.databaseURL}/appointments/${apptkey}.json`)
 					.then((obj) => {
-						resolve(obj.data);
+						let appt = obj.data;
+						appt.id = apptkey;
+						resolve(appt);
 					})
 					.catch((error) => {
 						reject(error);

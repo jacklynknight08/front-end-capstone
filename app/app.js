@@ -2,6 +2,7 @@
 
 const app = angular.module('ScheduleApp', ['ngRoute']);
 
+
 //set isAuth up so user has to be logged in to view other pages
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {  //look inside AuthFactory
 	AuthFactory.isAuthenticated()
@@ -56,9 +57,9 @@ app.config( ($routeProvider) => {
 		controller: 'CreateApptCtrl',
 		resolve: {isAuth}
 	})
-	.when('/confirm', {
+	.when('/confirm/:appointmentKey', {
 		templateUrl: 'partials/confirm.html',
-		//controller: 'ConfirmCtrl',
+		controller: 'ConfirmCtrl',
 		resolve: {isAuth}
 	})
 	.when('/viewschedule', {
@@ -79,3 +80,4 @@ app.run(($location, FBCreds) => {
 
 	firebase.initializeApp(authConfig);
 });
+
