@@ -12,6 +12,11 @@ app.controller("CreateApptCtrl", function($scope, DataFactory, $location, AuthFa
 	};
 
 	$scope.addAppointment = function(){
+		// console.log("newAppt", $scope.newAppt.serviceID);
+		$scope.newAppt.serviceID = $scope.newAppt.serviceID.name;
+		//console.log("New Appointment", $scope.newAppt.serviceID);
+		$scope.newAppt.stylistID = $scope.newAppt.stylistID.name;
+		//console.log("Stylist", $scope.newAppt.stylistID);
 		DataFactory.addAppointment($scope.newAppt)
 		.then( (data) => {
 			$location.path(`/confirm`);

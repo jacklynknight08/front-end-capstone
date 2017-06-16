@@ -1,11 +1,11 @@
 <div class="container" ng-controller="CreateApptCtrl">
   <h4>Create Appointment</h4>
-    <select class="selectpicker" placeholder="Select Service" ng-model="newAppt.serviceID">
-      <option ng-repeat="item in services" ng-value="item.serviceID">{{item.name}}</option>
+    <select class="selectpicker" placeholder="Select Service" ng-model="newAppt.serviceID" ng-options="item.name for item in services">
+      <option ng-value="item.serviceID"></option>
     </select>
 
-    <select class="selectpicker" placeholder="Select Stylist" ng-model="newAppt.stylistID">
-      <option ng-repeat="person in stylists" ng-value="person.stylistID">{{person.name}}</option>
+    <select class="selectpicker" placeholder="Select Stylist" ng-model="newAppt.stylistID" ng-options="person.name for person in stylists">
+      <option ng-value="person.stylistID"></option>
     </select>
 
     <select class="selectpicker" placeholder="Select Time" ng-model="newAppt.startTime">
