@@ -91,10 +91,24 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 				});
 			};
 
+			const getBookedAppt = (uid) => {
+				return $q((resolve, reject) => {
+					$http.get(`${FBCreds.databaseURL}/appointments/${uid}.json`)
+					.then((obj) => {
+						resolve(obj);
+					})
+					.catch((error) => {
+						reject(error);
+					});
+				});
+			};
+
+
 	return { addAppointment,
 			 getAppointments,
 			 getServices,
 			 getStylists,
-			 deleteAppointment };
+			 deleteAppointment,
+			 getBookedAppt };
 });
 
