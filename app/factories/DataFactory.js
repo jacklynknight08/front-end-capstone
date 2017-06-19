@@ -60,16 +60,14 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 				});
 			};
 
-
-			const getAppointments = (user) => {
+			const getAppointments = () => {
 				let appts = [];
 				return $q((resolve, reject) => {
-					$http.get(`${FBCreds.databaseURL}/appointments.json?orderBy="uid"&equalTo="${user}"`)
+					$http.get(`${FBCreds.databaseURL}/appointments.json`)
 					.then((apptObj) => {
 						let apptCollection = apptObj.data;
 						console.log("apptCollection", apptCollection);
 						Object.keys(apptCollection).forEach((key) => {
-							apptCollection[key].id = key;
 							appts.push(apptCollection[key]);
 						});
 						resolve(appts);

@@ -64,7 +64,7 @@ app.config( ($routeProvider) => {
 	})
 	.when('/viewschedule', {
 		templateUrl: 'partials/view-schedule.html',
-		//controller: 'ViewScheduleCtrl',
+		controller: 'ViewScheduleCtrl',
 		resolve: {isAuth}
 	})
 	.otherwise('/');
