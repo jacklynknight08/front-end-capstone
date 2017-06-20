@@ -2,7 +2,7 @@
 
 console.log("DataFactory is loading..");
 
-app.factory("DataFactory", function($q, $http, FBCreds) {
+app.factory("DataFactory", function($q, $http, FBCreds, AuthFactory) {
 
 	console.log("What's going on here?");
 
@@ -68,6 +68,7 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 						let apptCollection = apptObj.data;
 						console.log("apptCollection", apptCollection);
 						Object.keys(apptCollection).forEach((key) => {
+							apptCollection[key].id = key;
 							appts.push(apptCollection[key]);
 						});
 						resolve(appts);
@@ -78,9 +79,10 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 				});
 			};
 
-			const deleteAppointment = (appointmentID) => {
+			const deleteAppointment = (apptkey) => {
+				//console.log("APPT KEY", apptkey);
 				return $q ((resolve, reject) => {
-					$http.delete(`${FBCreds.databaseURL}/appointments/${appointmentID}.json`)
+					$http.delete(`${FBCreds.databaseURL}/appointments/${apptkey}.json`)
 					.then((response) => {
 						resolve(response);
 					})
@@ -112,4 +114,3 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 			 deleteAppointment,
 			 getBookedAppt };
 });
-

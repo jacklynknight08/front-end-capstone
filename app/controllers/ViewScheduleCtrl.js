@@ -6,25 +6,32 @@ app.controller("ViewScheduleCtrl", function($scope, DataFactory, $location, $rou
 
 	$scope.getAppointments = function(){
 		DataFactory.getAppointments()
-		.then((appts) => {
+		.then( (appts) => {
 			$scope.appts = appts;
 			console.log("All Appointments", $scope.appts);
-			//console.log("Stylist Data", $scope.appts[0].stylistID);
-			//console.log("Time Data", $scope.appts[0].startTime);
-			//$scope.stylist = $scope.appts[0].stylistID;
+			$scope.getStylists();
+			console.log("Stylist Data in Appointments", $scope.stylists);
 		});
 	};
 
 	$scope.getStylists = function(){
 		DataFactory.getStylists()
 		.then( (data) => {
-			console.log("Stylist Data", data);
+			//console.log("Stylist Data", data);
 			$scope.stylists = data;
+		});
+	};
+
+	$scope.deleteAppointment = function(id){
+		DataFactory.deleteAppointment(id)
+		.then( (response) => {
+			$scope.getAppointments();
 		});
 	};
 
 	$scope.getAppointments();
 	$scope.getStylists();
+	// $scope.getAll();
 
 });
 

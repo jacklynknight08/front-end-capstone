@@ -1,4 +1,21 @@
-<div class="container">
+<div ng-repeat="person in stylists">{{person.name}}
+  <p ng-repeat="item in appts" ng-if="person.name===item.stylistID">{{item.serviceID}}{{item.startTime}}
+  <button ng-click="deleteAppointment(item.id)">x</button>
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
 <table class="table table-bordered table-inverse">
   <thead>
     <tr>
@@ -9,19 +26,19 @@
   <tbody>
     <tr>
       <th scope="row">9:00am</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '9:00am'}:true">{{item.serviceID}}</td>
+      <td ng-repeat="item in appts | filter: {stylistID:item.stylistID, 'startTime': '9:00am'}:true ">{{item.serviceID}} <button ng-click="deleteAppointment(item.id)">x</button></td>
     </tr>
     <tr>
       <th scope="row">9:30am</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '9:30am'}:true">{{item.serviceID}}</td>
+      <td ng-repeat="item in appts | filter: {stylistID:item.stylistID, 'startTime': '9:30am'}:true">{{item.serviceID}}</td>
     </tr>
     <tr>
       <th scope="row">10:00am</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '10:00am'}:true">{{item.serviceID}}</td>
+      <td ng-repeat="item in appts | filter: {stylistID:item.stylistID, 'startTime': '10:00am'}:true">{{item.serviceID}}</td>
     </tr>
     <tr>
       <th scope="row">10:30am</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '10:30am'}:true">{{item.serviceID}}</td>
+      <td ng-repeat="item in appts | filter: {stylistID:item.stylistID, 'startTime': '10:30am'}:true">{{item.serviceID}}</td>
     </tr>
      <tr>
       <th scope="row">11:00am</th>
@@ -73,4 +90,4 @@
     </tr>
   </tbody>
 </table>
-</div>
+</div> -->
