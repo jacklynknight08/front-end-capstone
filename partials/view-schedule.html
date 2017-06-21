@@ -1,6 +1,7 @@
 <div ng-repeat="person in stylists">{{person.name}}
   <p ng-repeat="item in appts" ng-if="person.name===item.stylistID">{{item.serviceID}}{{item.startTime}}
   <button ng-click="deleteAppointment(item.id)">x</button>
+  <a ng-href="#!/viewschedule/edit/{{item.id}}"><button>Edit</button></a>
   </p>
 </div>
 
