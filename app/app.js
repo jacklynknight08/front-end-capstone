@@ -67,6 +67,11 @@ app.config( ($routeProvider) => {
 		controller: 'ViewScheduleCtrl',
 		resolve: {isAuth}
 	})
+	.when('/viewschedule/edit/:appointmentKey', {
+		templateUrl: 'partials/edit-appt.html',
+		controller: 'EditApptCtrl',
+		resolve: {isAuth}
+	})
 	.otherwise('/');
 });
 

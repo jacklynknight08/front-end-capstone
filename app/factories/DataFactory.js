@@ -106,11 +106,24 @@ app.factory("DataFactory", function($q, $http, FBCreds, AuthFactory) {
 				});
 			};
 
+			const editAppt = (apptkey, editedObj) => {
+				return $q((resolve, reject) => {
+					let newObj = JSON.stringify(editedObj);
+					$http.patch(`${FBCreds.databaseURL}/appointments/${apptkey}.json`, newObj)
+					.then((itemObj) => {
+						resolve(itemObj);
+					})
+					.catch((error) => {
+						reject(error);
+					});
+				});
+			};
 
 	return { addAppointment,
 			 getAppointments,
 			 getServices,
 			 getStylists,
 			 deleteAppointment,
-			 getBookedAppt };
+			 getBookedAppt,
+			 editAppt };
 });
