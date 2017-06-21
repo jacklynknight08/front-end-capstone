@@ -21,18 +21,19 @@ app.config( ($routeProvider) => {
 	$routeProvider  //setting up our object
 	.when('/', {
 		templateUrl: 'partials/auth.html',
-		controller: 'AuthCtrl',
+		controller: 'NavCtrl',
 	})
 	.when('/login', {
 		templateUrl: 'partials/auth.html',
-		controller: 'AuthCtrl',
+		controller: 'NavCtrl',
 	})
 	.when('/logout', {
 		templateUrl: 'partials/auth.html',
-		controller: 'AuthCtrl',
+		controller: 'NavCtrl',
 	})
 	.when('/home', {
 		templateUrl: 'partials/home.html',
+		controller: 'NavCtrl',
 		resolve: {isAuth}
 	})
 	.when('/staff', {

@@ -107,6 +107,7 @@ app.factory("DataFactory", function($q, $http, FBCreds, AuthFactory) {
 			};
 
 			const editAppt = (apptkey, editedObj) => {
+				console.log("APPT KEY", apptkey);
 				return $q((resolve, reject) => {
 					let newObj = JSON.stringify(editedObj);
 					$http.patch(`${FBCreds.databaseURL}/appointments/${apptkey}.json`, newObj)
