@@ -1,33 +1,33 @@
 <div class="container">
   <h4>Edit Appointment</h4>
 
-  <p>{{bookedAppt.stylistID}} for {{bookedAppt.serviceID}}</p>
+  <p>You booked with {{bookedAppt.stylistID}} for a {{bookedAppt.serviceID}} at {{bookedAppt.startTime}}</p>
 
-    <select class="selectpicker">
-      <option ng-repeat="item in services" ng-value="item.serviceID">{{item.serviceID}}</option>
+    <select class="selectpicker" ng-model="bookedAppt.serviceID">
+      <option ng-repeat="item in services" value="{{item.serviceID}}">{{item.serviceID}}</option>
     </select>
 
-    <select class="selectpicker">
-      <option ng-repeat="person in stylists" ng-value="person.stylistID">{{person.name}}</option>
+    <select class="selectpicker" ng-model="bookedAppt.stylistID">
+      <option ng-repeat="person in stylists" value="{{person.name}}">{{person.name}}</option>
     </select>
 
-    <select class="selectpicker">
-      <option>9:00am</option>
-      <option>9:30am</option>
-      <option>10:00am</option>
-      <option>10:30am</option>
-      <option>11:00am</option>
-      <option>11:30am</option>
-      <option>12:00pm</option>
-      <option>12:30pm</option>
-      <option>1:00pm</option>
-      <option>1:30pm</option>
-      <option>2:00pm</option>
-      <option>2:30pm</option>
-      <option>3:00pm</option>
-      <option>3:30pm</option>
-      <option>4:00pm</option>
-      <option>4:30pm</option>
+    <select class="selectpicker" ng-model="bookedAppt.startTime">
+      <option value="9:00am">9:00am</option>
+      <option value="9:30am">9:30am</option>
+      <option value="10:00am">10:00am</option>
+      <option value="10:30am">10:30am</option>
+      <option value="11:00am">11:00am</option>
+      <option value="11:30am">11:30am</option>
+      <option value="12:00pm">12:00pm</option>
+      <option value="12:30pm">12:30pm</option>
+      <option value="1:00pm">1:00pm</option>
+      <option value="1:30pm">1:30pm</option>
+      <option value="2:00pm">2:00pm</option>
+      <option value="2:30pm">2:30pm</option>
+      <option value="3:00pm">3:00pm</option>
+      <option value="3:30pm">3:30pm</option>
+      <option value="4:00pm">4:00pm</option>
+      <option value="4:30pm">4:30pm</option>
     </select>
 
     <button type="button" class="btn btn-default" ng-click="submitNew()">Submit</button>
