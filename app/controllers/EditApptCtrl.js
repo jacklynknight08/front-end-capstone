@@ -40,6 +40,7 @@ app.controller('EditApptCtrl', function($scope, DataFactory, $location, AuthFact
 	    .then( (response) => {
 	    	$location.path("/viewschedule");
 	    });
+	    console.log("EDITED BOOKED APPT", $scope.bookedAppt);
 	    console.log("You clicked the edit task button!");
 	  };
 
