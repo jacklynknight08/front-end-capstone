@@ -1,8 +1,12 @@
-<div ng-repeat="person in stylists">{{person.name}}
-  <p ng-repeat="item in appts" ng-if="person.name===item.stylistID">{{item.serviceID}}{{item.startTime}}
+<div class="container">
+<div class="md-col-3">
+<div class="table table-bordered table-inverse" ng-repeat="person in stylists">{{person.name}}
+  <p scope="row" ng-repeat="item in appts" ng-if="person.name===item.stylistID">{{item.startTime}} {{item.serviceID}}
   <button ng-click="deleteAppointment(item.id)">x</button>
   <a ng-href="#!/viewschedule/edit/{{item.id}}"><button>Edit</button></a>
   </p>
+</div>
+</div>
 </div>
 
 

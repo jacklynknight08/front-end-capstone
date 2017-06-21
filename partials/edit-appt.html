@@ -4,7 +4,7 @@
   <p>You booked with {{bookedAppt.stylistID}} for a {{bookedAppt.serviceID}} at {{bookedAppt.startTime}}</p>
 
     <select class="selectpicker" ng-model="bookedAppt.serviceID">
-      <option ng-repeat="item in services" value="{{item.serviceID}}">{{item.serviceID}}</option>
+      <option ng-repeat="item in services" value="{{item.name}}">{{item.name}}</option>
     </select>
 
     <select class="selectpicker" ng-model="bookedAppt.stylistID">
