@@ -36,7 +36,7 @@ app.controller('EditApptCtrl', function($scope, DataFactory, $location, AuthFact
 	};
 
     $scope.submitNew = function() {
-	    DataFactory.editAppt($routeParams.appointmentkey, $scope.bookedAppt)
+	    DataFactory.editAppt($routeParams.appointmentKey, $scope.bookedAppt)
 	    .then( (response) => {
 	    	$location.path("/viewschedule");
 	    });
