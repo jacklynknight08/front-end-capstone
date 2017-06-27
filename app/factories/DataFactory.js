@@ -120,11 +120,32 @@ app.factory("DataFactory", function($q, $http, FBCreds, AuthFactory) {
 				});
 			};
 
+			const getProducts = () => {
+				console.log("Products?");
+				let products = [];
+				return $q((resolve, reject) => {
+					$http.get(`${FBCreds.databaseURL}/products.json`)
+					.then((productObj) => {
+						let productCollection = productObj.data;
+						console.log("product collection", productCollection);
+						Object.keys(productCollection).forEach((key) => {
+							productCollection[key].productID = key;
+							products.push(productCollection[key]);
+						});
+						resolve(products);
+					})
+					.catch((error) => {
+						reject(error);
+					});
+				});
+			};
+
 	return { addAppointment,
 			 getAppointments,
 			 getServices,
 			 getStylists,
 			 deleteAppointment,
 			 getBookedAppt,
-			 editAppt };
+			 editAppt,
+			 getProducts };
 });

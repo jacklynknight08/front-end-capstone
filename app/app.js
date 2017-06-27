@@ -42,6 +42,7 @@ app.config( ($routeProvider) => {
 	})
 	.when('/products', {
 		templateUrl: 'partials/products.html',
+		controller: 'ProductCtrl',
 		resolve: {isAuth}
 	})
 	.when('/contact', {
