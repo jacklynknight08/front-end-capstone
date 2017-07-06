@@ -9,7 +9,7 @@ app.controller("ViewScheduleCtrl", function($scope, DataFactory, $location, $rou
 		.then( (appts) => {
 			$scope.appts = appts;
 			console.log("All Appointments", $scope.appts);
-			$scope.getStylists();
+			$scope.getStylists();  //makes stylist data available in all appointments
 			console.log("Stylist Data in Appointments", $scope.stylists);
 		});
 	};
