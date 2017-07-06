@@ -4,28 +4,13 @@
       <option ng-value="item.serviceID"></option>
     </select>
 
-    <select class="selectpicker" placeholder="Select Stylist" ng-model="newAppt.stylistID" ng-options="person.name for person in stylists">
+    <select class="selectpicker" placeholder="Select Stylist" ng-model="newAppt.stylistID" ng-options="person.name for person in stylists" ng-change="checkAppt()">
       <option ng-value="person.stylistID"></option>
     </select>
 
-    <select class="selectpicker" placeholder="Select Time" ng-model="newAppt.startTime">
-      <option value="9:00am">9:00am</option>
-      <option value="9:30am">9:30am</option>
-      <option value="10:00am">10:00am</option>
-      <option value="10:30am">10:30am</option>
-      <option value="11:00am">11:00am</option>
-      <option value="11:30am">11:30am</option>
-      <option value="12:00pm">12:00pm</option>
-      <option value="12:30pm">12:30pm</option>
-      <option value="1:00pm">1:00pm</option>
-      <option value="1:30pm">1:30pm</option>
-      <option value="2:00pm">2:00pm</option>
-      <option value="2:30pm">2:30pm</option>
-      <option value="3:00pm">3:00pm</option>
-      <option value="3:30pm">3:30pm</option>
-      <option value="4:00pm">4:00pm</option>
-      <option value="4:30pm">4:30pm</option>
+    <select class="selectpicker" placeholder="Select Time" ng-model="newAppt.startTime" ng-change="checkAppt()">
+      <option ng-repeat="time in times">{{time.startTime}}</option>
     </select>
 
-    <button type="button" class="btn btn-default" ng-click="addAppointment()">Book</button>
+    <button type="button" class="btn btn-default" ng-click="addAppointment()" ng-disabled="disabled">Book</button>
 </div>

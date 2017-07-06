@@ -140,6 +140,26 @@ app.factory("DataFactory", function($q, $http, FBCreds, AuthFactory) {
 				});
 			};
 
+			const getTimes = () => {
+				console.log("Times?");
+				let times = [];
+				return $q((resolve, reject) => {
+					$http.get(`${FBCreds.databaseURL}/times.json`)
+					.then((timeObj) => {
+						let timeCollection = timeObj.data;
+						console.log("time collection", timeCollection);
+						Object.keys(timeCollection).forEach((key) => {
+							timeCollection[key].timeID = key;
+							times.push(timeCollection[key]);
+						});
+						resolve(times);
+					})
+					.catch((error) => {
+						reject(error);
+					});
+				});
+			};
+
 	return { addAppointment,
 			 getAppointments,
 			 getServices,
@@ -147,5 +167,6 @@ app.factory("DataFactory", function($q, $http, FBCreds, AuthFactory) {
 			 deleteAppointment,
 			 getBookedAppt,
 			 editAppt,
-			 getProducts };
+			 getProducts,
+			 getTimes };
 });

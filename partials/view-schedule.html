@@ -1,98 +1,12 @@
 <div class="container">
-<div class="md-col-3">
-<div class="table table-bordered table-inverse" ng-repeat="person in stylists">{{person.name}}
-  <p scope="row" ng-repeat="item in appts" ng-if="person.name===item.stylistID">{{item.startTime}} {{item.serviceID}}
-  <button ng-click="deleteAppointment(item.id)">x</button>
-  <a ng-href="#!/viewschedule/edit/{{item.id}}"><button>Edit</button></a>
-  </p>
+  <div class="row">
+    <div class="table" ng-repeat="person in stylists"><h4>{{person.name}}</h4>
+      <div class="well">
+        <p scope="row" ng-repeat="item in appts" ng-if="person.name===item.stylistID">{{item.startTime}} {{item.serviceID}}
+        <a ng-href="#!/viewschedule/edit/{{item.id}}"><button class="btn btn-info">Edit</button></a>
+        <button class="btn btn-danger" ng-click="deleteAppointment(item.id)">x</button>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="container">
-<table class="table table-bordered table-inverse">
-  <thead>
-    <tr>
-      <th>Time</th>
-      <th ng-repeat="person in stylists">{{person.name}}</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">9:00am</th>
-      <td ng-repeat="item in appts | filter: {stylistID:item.stylistID, 'startTime': '9:00am'}:true ">{{item.serviceID}} <button ng-click="deleteAppointment(item.id)">x</button></td>
-    </tr>
-    <tr>
-      <th scope="row">9:30am</th>
-      <td ng-repeat="item in appts | filter: {stylistID:item.stylistID, 'startTime': '9:30am'}:true">{{item.serviceID}}</td>
-    </tr>
-    <tr>
-      <th scope="row">10:00am</th>
-      <td ng-repeat="item in appts | filter: {stylistID:item.stylistID, 'startTime': '10:00am'}:true">{{item.serviceID}}</td>
-    </tr>
-    <tr>
-      <th scope="row">10:30am</th>
-      <td ng-repeat="item in appts | filter: {stylistID:item.stylistID, 'startTime': '10:30am'}:true">{{item.serviceID}}</td>
-    </tr>
-     <tr>
-      <th scope="row">11:00am</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '11:00am'}:true">{{item.serviceID}}</td>
-    </tr>
-     <tr>
-      <th scope="row">11:30am</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '11:30am'}:true">{{item.serviceID}}</td>
-    </tr>
-     <tr>
-      <th scope="row">12:00pm</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '12:00pm'}:true">{{item.serviceID}}</td>
-    </tr>
-     <tr>
-      <th scope="row">12:30pm</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '12:30pm'}:true">{{item.serviceID}}</td>
-    </tr>
-     <tr>
-      <th scope="row">1:00pm</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '1:00pm'}:true">{{item.serviceID}}</td>
-    </tr>
-     <tr>
-      <th scope="row">1:30pm</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '1:30pm'}:true">{{item.serviceID}}</td>
-    </tr>
-     <tr>
-      <th scope="row">2:00pm</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '2:00pm'}:true">{{item.serviceID}}</td>
-    </tr>
-     <tr>
-      <th scope="row">2:30pm</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '2:30pm'}:true">{{item.serviceID}}</td>
-    </tr>
-     <tr>
-      <th scope="row">3:00pm</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '3:00pm'}:true">{{item.serviceID}}</td>
-    </tr>
-       <tr>
-      <th scope="row">3:30pm</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '3:30pm'}:true">{{item.serviceID}}</td>
-    </tr>
-       <tr>
-      <th scope="row">4:00pm</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '4:00pm'}:true">{{item.serviceID}}</td>
-    </tr>
-       <tr>
-      <th scope="row">4:30pm</th>
-      <td ng-repeat="item in appts | filter: {'startTime': '4:30pm'}:true">{{item.serviceID}}</td>
-    </tr>
-  </tbody>
-</table>
-</div> -->
