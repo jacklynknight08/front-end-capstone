@@ -76,13 +76,12 @@ app.controller("CreateApptCtrl", function($scope, DataFactory, $location, AuthFa
 				newObj.startTime = value.startTime;
 				newObj.stylistID = value.stylistID;
 				$scope.checkingAppts.push(newObj);
-				//console.log("NEWOBJ", newObj);
-				//console.log("CHECK APPTS", $scope.checkingAppts);
-				$scope.checkingAppts.forEach(function(value){
-					if(value.stylistID == value.startTime){
-						return false;
-					}
-				});
+			});
+			$scope.checkingAppts.forEach(function(val){
+				console.log("Gimme that value", val);
+				if(val.stylistID === val.startTime){
+					$scope.disabledBtn();
+				}
 			});
 		});
 	};
@@ -104,6 +103,6 @@ app.controller("CreateApptCtrl", function($scope, DataFactory, $location, AuthFa
 	$scope.getStylists();
 	$scope.getAppointments();
 	$scope.getTimes();
-	$scope.disabledBtn();
+	//$scope.disabledBtn();
  	$scope.checkAppt();
 });
